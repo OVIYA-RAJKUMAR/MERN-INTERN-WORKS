@@ -1,5 +1,89 @@
 
 .box {
     background-color: greenyellow;
-    color: red;
+    color: rgb(88,0,0);
 }
+div{
+    color:blanchedalmond;
+    background-color: blueviolet;
+}
+p{
+    color:maroon;
+}
+.left {
+    text-align: left;
+}
+
+.center {
+    text-align: center;
+}
+
+.right {
+    text-align: right;
+}
+
+.justify {
+    text-align: justify;
+    width: 60%;
+    margin: auto;
+}
+p.dotted {
+    border-style: dotted;
+    border-color: red;
+}
+p.dashed {border-style: dashed;
+border-color: blueviolet;}
+p.solid {border-style: solid;
+border-color: grey;}
+p.double {border-style: double;}
+p.groove {border-style: groove;
+border-color:deeppink}
+p.ridge {border-style: ridge;
+border-color:deepskyblue}
+p.inset {border-style: inset;
+border-color:violet}
+p.outset {border-style: outset;
+border-color:navy}
+p.none {border-style: none;
+border-color:hotpink}
+p.hidden {border-style: hidden;
+border-color:darksalmon}
+p.mix {border-style: dotted dashed solid double;
+border-color:lightgreen}
+p.solid{
+  border: 2px solid red;
+  border-radius: 5px;
+}
+p.mix {
+  margin-top: 100px;
+  margin-bottom: 100px;
+  margin-right: 150px;
+  margin-left: 80px;
+}
+p.mix {
+  margin: 25px 50px 75px;
+}
+p.solid {
+  padding-top: 50px;
+  padding-right: 30px;
+  padding-bottom: 50px;
+  padding-left: 80px;
+}
+p.solid {
+  width: 300px;
+  border: 15px solid green;
+  padding: 50px;
+  margin: 20px;
+}
+a:link {
+  color: red;
+}
+
+a:visited {
+  color: green;
+}
+a:hover {
+  color: hotpink;
+}
+a:active {
+  color: blue;
