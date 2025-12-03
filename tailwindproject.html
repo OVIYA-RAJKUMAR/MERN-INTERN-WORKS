@@ -4,11 +4,7 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>Global Academy — Home & Login (Single File)</title>
-
-  <!-- Tailwind CDN (single-file friendly) -->
   <script src="https://cdn.tailwindcss.com"></script>
-
-  <!-- Tailwind config for custom colors (applies immediately) -->
   <script>
     tailwind.config = {
       darkMode: 'class',
@@ -26,15 +22,14 @@
   </script>
 
   <style>
-    /* small visual tweak for the demo (keeps file single) */
+  
     :root { color-scheme: light dark; }
   </style>
 </head>
 <body class="bg-white dark:bg-gray-900 text-gray-800 dark:text-gray-100 font-sans">
-  <!-- Main container to hold two "pages": Home and Login -->
+
   <div id="app" class="min-h-screen flex flex-col">
 
-    <!-- NAVBAR -->
     <header class="w-full backdrop-blur bg-white/60 dark:bg-gray-900/60 border-b border-gray-200 dark:border-gray-800">
       <nav class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div class="flex items-center justify-between h-16">
@@ -47,8 +42,6 @@
               </div>
             </a>
           </div>
-
-          <!-- desktop links -->
           <div class="hidden md:flex items-center gap-6">
             <a href="#features" class="text-sm hover:underline">Features</a>
             <a href="#courses" class="text-sm hover:underline">Courses</a>
@@ -56,12 +49,11 @@
             <button id="login-nav" class="px-4 py-2 rounded-md bg-brand-500 hover:bg-brand-700 text-white text-sm shadow">Login</button>
             <button id="theme-toggle" title="Toggle dark / light" class="p-2 rounded-md border border-gray-200 dark:border-gray-700">
               <span id="theme-icon" class="sr-only">Toggle theme</span>
-              <!-- Icon changes via JS -->
+              
               <svg id="moon" xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"/></svg>
             </button>
           </div>
 
-          <!-- mobile menu button -->
           <div class="md:hidden flex items-center gap-2">
             <button id="theme-toggle-mobile" title="Toggle dark / light" class="p-2 rounded-md border border-gray-200 dark:border-gray-700">
               <svg class="w-5 h-5" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m8.66-11.66l-.7.7M4.04 19.96l-.7-.7M21 12h1M2 12H1m18.66 5.66l-.7-.7M4.04 4.04l-.7.7"/></svg>
@@ -72,8 +64,6 @@
           </div>
         </div>
       </nav>
-
-      <!-- mobile nav panel -->
       <div id="mobile-panel" class="hidden md:hidden border-t border-gray-100 dark:border-gray-800">
         <div class="px-4 py-4 flex flex-col gap-3">
           <a href="#features" class="text-sm">Features</a>
@@ -83,13 +73,9 @@
         </div>
       </div>
     </header>
-
-    <!-- VIEWS CONTAINER -->
     <main class="flex-1">
-      <!-- HOME VIEW -->
+      
       <section id="home-view" class="home-view">
-
-        <!-- HERO -->
         <section class="relative overflow-hidden">
           <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-12 pb-16 lg:pb-28">
             <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
@@ -117,8 +103,6 @@
                   </div>
                 </div>
               </div>
-
-              <!-- hero illustration / card -->
               <div class="relative">
                 <div class="rounded-2xl shadow-2xl p-6 bg-white dark:bg-gray-800 border border-gray-100 dark:border-gray-700 transform hover:scale-[1.01] transition">
                   <div class="flex items-center justify-between">
@@ -150,8 +134,6 @@
                     </ul>
                   </div>
                 </div>
-
-                <!-- Responsive decorative panel: shows different layout on mobile -->
                 <div class="mt-4 sm:hidden text-xs text-gray-500">
                   Note: Mobile layout stacks content for easier reading — try resizing the window.
                 </div>
@@ -159,15 +141,12 @@
             </div>
           </div>
 
-          <!-- bottom decorative wave -->
           <div class="pointer-events-none">
             <svg viewBox="0 0 1200 60" class="w-full -mt-1" preserveAspectRatio="none">
               <path d="M0 0h1200v60H0z" fill="transparent"></path>
             </svg>
           </div>
         </section>
-
-        <!-- FEATURES & DETAILS (include many HTML concepts) -->
         <section id="features" class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
           <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
             <article class="bg-gradient-to-b from-white to-gray-50 dark:from-gray-800 dark:to-gray-900 rounded-2xl p-6 border border-gray-100 dark:border-gray-800 shadow">
@@ -301,8 +280,6 @@
         </section>
 
       </section>
-
-      <!-- LOGIN VIEW (separate 'page' inside same file) -->
       <section id="login-view" class="hidden min-h-[60vh] py-12">
         <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
           <div class="bg-white dark:bg-gray-800 border border-gray-100 dark:border-gray-700 rounded-2xl shadow-lg overflow-hidden grid grid-cols-1 lg:grid-cols-2">
@@ -398,10 +375,8 @@
   </div>
 
 <script>
-  // small helpers & initialization
-  document.getElementById('year').textContent = new Date().getFullYear();
 
-  // Elements
+  document.getElementById('year').textContent = new Date().getFullYear();
   const mobileOpen = document.getElementById('mobile-open');
   const mobilePanel = document.getElementById('mobile-panel');
   const loginNav = document.getElementById('login-nav');
@@ -419,17 +394,15 @@
   const mobileOpenBtn = document.getElementById('mobile-open');
   const mobilePanelEl = document.getElementById('mobile-panel');
 
-  // Mobile menu toggle
   mobileOpenBtn?.addEventListener('click', () => {
     mobilePanelEl.classList.toggle('hidden');
   });
 
-  // Navigation: show login view
   function showLogin() {
     homeView.classList.add('hidden');
     loginView.classList.remove('hidden');
     window.location.hash = '#login';
-    // scroll to top
+  
     window.scrollTo({ top: 0, behavior: 'smooth' });
   }
   function showHome() {
@@ -438,16 +411,12 @@
     window.location.hash = '#home';
     window.scrollTo({ top: 0, behavior: 'smooth' });
   }
-
-  // Attach events to any login navigation buttons
   document.querySelectorAll('#login-nav, #login-nav-mobile, #cta-login').forEach(btn=>{
     btn?.addEventListener('click', (e)=> { e.preventDefault(); showLogin(); });
   });
 
   document.getElementById('back-home')?.addEventListener('click', ()=> showHome());
   document.getElementById('brand')?.addEventListener('click', (e)=>{ e.preventDefault(); showHome(); });
-
-  // Password toggle
   pwToggle?.addEventListener('click', () => {
     const pw = document.getElementById('password');
     if (!pw) return;
@@ -455,7 +424,7 @@
     else { pw.type = 'password'; pwToggle.textContent = 'Show'; }
   });
 
-  // simples login validation (demo)
+  
   loginForm?.addEventListener('submit', (e) => {
     e.preventDefault();
     const email = loginForm.email.value.trim();
@@ -467,35 +436,32 @@
       feedback.classList.remove('hidden');
       return;
     }
-    // Very basic email pattern check
+    
     if (!/^\S+@\S+\.\S+$/.test(email)) {
       feedback.textContent = 'Please enter a valid email address.';
       feedback.classList.remove('hidden');
       return;
     }
     feedback.classList.add('hidden');
-
-    // gather courses checked
     const courses = Array.from(loginForm.querySelectorAll('input[name="courses"]:checked')).map(i=>i.value);
-    // For demo, we just show a friendly message — replace with real auth calls
     alert('Logged in (demo)\\nEmail: ' + email + '\\nCourses selected: ' + (courses.length? courses.join(', '): 'None'));
-    // After login, navigate home or dashboard — here we go home
+  
     showHome();
   });
 
-  // Dark/light mode toggle with persistence
+
   function setDarkMode(isDark) {
     const html = document.documentElement;
     if (isDark) html.classList.add('dark');
     else html.classList.remove('dark');
     localStorage.setItem('site-theme', isDark ? 'dark' : 'light');
   }
-  // initialize from system or local storage
+  
   (function initTheme(){
     const saved = localStorage.getItem('site-theme');
     if (saved) setDarkMode(saved === 'dark');
     else {
-      // respect system preference
+     
       const prefersDark = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
       setDarkMode(prefersDark);
     }
@@ -510,13 +476,11 @@
     localStorage.setItem('site-theme', isDark ? 'dark' : 'light');
   });
 
-  // handle hash-based routing on load
   (function routeOnLoad(){
     if (location.hash === '#login') showLogin();
     else showHome();
   })();
 
-  // Accessibility: close mobile panel if clicked outside (small improvement)
   document.addEventListener('click', (e) => {
     const target = e.target;
     if (!mobilePanelEl.contains(target) && !mobileOpenBtn.contains(target)) {
@@ -526,15 +490,14 @@
     }
   });
 
-  // Add small responsive hint: toggle text when resized (demonstrates behavior difference)
   let resizeTimeout = null;
   function onResize() {
     clearTimeout(resizeTimeout);
     resizeTimeout = setTimeout(()=> {
       if (window.innerWidth < 640) {
-        // mobile hint shown inside hero (already present)
+       
       } else {
-        // desktop
+        
       }
     }, 150);
   }
