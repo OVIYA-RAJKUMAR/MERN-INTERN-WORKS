@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Student Management System</title>
+<style>
+    body{
+        font-family: Arial, sans-serif;
+        background: #f1f5f9;
+        margin: 0;
+        padding: 20px;
+    }
+    h2{
+        text-align: center;
+        color: #333;
+    }
+    .container{
+        max-width: 700px;
+        margin: auto;
+        background: white;
+        padding: 20px;
+        border-radius: 12px;
+        box-shadow: 0px 0px 12px rgba(0,0,0,0.1);
+    }
+    input{
+        padding: 10px;
+        width: 95%;
+        margin: 8px 0;
+        border-radius: 8px;
+        border: 1px solid #ccc;
+    }
+    button{
+        padding: 10px 20px;
+        border: none;
+        background: #2563eb;
+        color: white;
+        border-radius: 8px;
+        cursor: pointer;
+        margin-top: 10px;
+    }
+    button:hover{
+        background: #1e40af;
+    }
+    .student-card{
+        background: #e2e8f0;
+        padding: 12px;
+        border-radius: 10px;
+        margin: 10px 0;
+    }
+</style>
+</head>
+<body>
+
+<h2>Student Management System</h2>
+
+<div class="container">
+
+    <h3>Add Student</h3>
+
+    <input type="text" id="name" placeholder="Enter Name">
+    <input type="date" id="dob">
+    <input type="email" id="email" placeholder="Enter Email">
+    <input type="text" id="roll" placeholder="Enter Roll Number">
+    <input type="text" id="grade" placeholder="Enter Grade">
+
+    <button onclick="addStudent()">Add Student</button>
+
+    <hr>
+
+    <h3>Search Student</h3>
+    <input type="text" id="searchInput" placeholder="Search by Name or Roll No">
+    <button onclick="searchStudent()">Search</button>
+
+    <!-- NEW BUTTON ADDED -->
+    <button onclick="displayStudents()">Display All Students</button>
+
+    <hr>
+
+    <h3>All Students</h3>
+    <p><b>Total Students:</b> <span id="count">0</span></p>
+
+    <div id="result"></div>
+
+</div>
+
+<script>
+
+// -------------------- ARRAY TO STORE STUDENTS --------------------
+let students = [];
+
+
+// -------------------- ADD STUDENT --------------------
+function addStudent(){
+    let name = document.getElementById("name").value;
+    let dob = document.getElementById("dob").value;
+    let email = document.getElementById("email").value;
+    let roll = document.getElementById("roll").value;
+    let grade = document.getElementById("grade").value;
+
+    if(!name || !dob || !email || !roll || !grade){
+        alert("Please fill all fields!");
+        return;
+    }
+
+    let newStudent = { name, dob, email, roll, grade };
+
+    // using spread operator to add into array
+    students = [...students, newStudent];
+
+    displayStudents();
+    updateCount();
+
+    // clear input fields
+    document.getElementById("name").value = "";
+    document.getElementById("dob").value = "";
+    document.getElementById("email").value = "";
+    document.getElementById("roll").value = "";
+    document.getElementById("grade").value = "";
+}
+
+
+// -------------------- DISPLAY ALL STUDENTS --------------------
+function displayStudents() {
+    let output = "";
+    
+    // using map() to generate HTML UI
+    students.map(s => {
+        output += `
+        <div class="student-card">
+            <b>Name:</b> ${s.name}<br>
+            <b>DOB:</b> ${s.dob}<br>
+            <b>Email:</b> ${s.email}<br>
+            <b>Roll No:</b> ${s.roll}<br>
+            <b>Grade:</b> ${s.grade}
+        </div>
+        `;
+    });
+
+    document.getElementById("result").innerHTML = output;
+}
+
+
+// -------------------- SEARCH STUDENT --------------------
+function searchStudent(){
+    let search = document.getElementById("searchInput").value.toLowerCase();
+
+    // using filter() to search
+    let filtered = students.filter(s => 
+        s.name.toLowerCase().includes(search) ||
+        s.roll.toLowerCase().includes(search)
+    );
+
+    let output = "";
+    filtered.forEach(s => {
+        output += `
+        <div class="student-card">
+            <b>Name:</b> ${s.name}<br>
+            <b>DOB:</b> ${s.dob}<br>
+            <b>Email:</b> ${s.email}<br>
+            <b>Roll No:</b> ${s.roll}<br>
+            <b>Grade:</b> ${s.grade}
+        </div>
+        `;
+    });
+
+    if(filtered.length === 0){
+        output = "<p>No results found.</p>";
+    }
+
+    document.getElementById("result").innerHTML = output;
+}
+
+
+// -------------------- COUNT USING reduce() --------------------
+function updateCount(){
+    let count = students.reduce((total) => total + 1, 0);
+    document.getElementById("count").innerText = count;
+}
+
+</script>
+
+</body>
+</html>

@@ -195,7 +195,8 @@ console.log(found); */
 
 
 
- //map()-return another array with same length
+ //map()-it transforms each and every element and it will return another array with same length as the output
+
 /*
  let num = [1, 4, 7, 12, 150];
 let result = num.map(element => {
@@ -221,22 +222,154 @@ let evenMap = num.map(element => {
 
 console.log(evenMap); */
 
+//printing the names of the person whose length of the names is grater than four
+/* 
+
+
+let names = ["Ana", "Meera", "John", "Oviya", "Kumar"];
+let result = names.find(name => name.length > 4);
+console.log(result);
+
+ */
+
+
+/* let price=[200,300,400];
+let result=price.map(n=>{
+    return n+100;
+});
+console.log(result);
+ */
+
+
+/* let persons=["kumar","vijay","sai"];
+let result=persons.map(n=>{
+    return "Mr."+n; 
+});
+console.log(result); */
+
+
+//filter()-give all the numbersa coording to the condition
+
+/* let num = [1, 3, 4, 7, 10, 15];
+let firstEven = num.filter(element => element % 2 === 0);
+console.log(firstEven);
+
+
+ */
+
+//object-collection of key value pairs
+/*
+const students = [
+    { name: "Oviya", age: 19, grade: "A" },
+    { name: "Kumar", age: 20, grade: "B" },
+    { name: "Meera", age: 18, grade: "A+" }
+];
+
+const names = students.map(s => s.name);
+
+console.log(names);*/
+
+
+/*
+const students = [
+    { name: "Oviya", age: 19, grade: "A" },
+    { name: "Kumar", age: 20, grade: "B" },
+    { name: "Meera", age: 18, grade: "A+" }
+];
+
+const result = students.map(s => ({
+    name: s.name,
+    grade: s.grade
+}));
+
+console.log(result);
+*/
+
+/*
+const students = [
+    { name: "Oviya", age: 19, grade: "A" }
+];
+
+const { name, age, grade } = students[0];
+
+console.log(name, age, grade);
+
+*/
+
+
+/*
+const students = [
+    { name: "Oviya", age: 19, grade: "A" },
+    { name: "Kumar", age: 20, grade: "B" },
+    { name: "Meera", age: 18, grade: "A+" }
+];
+
+const ages = students.map(s => s.age);
+
+console.log(ages);
+*/
+/*
+const students = [
+    { name: "Oviya", age: 19 },
+    { name: "Kumar", age: 20 }
+];
+
+
+for (let student of students) {
+    console.log(student.name, student.age);
+}
+*/ 
+
+//--------------chaining methods---------------------
+
+//------------------------loops--------------------------
+//for..................in loop
 
 
 
+/* const person={
+    name:"ooviya",
+    age:25,
+    city:"chennai"
+};
+for(let key in person){
+    console.log(key, person[key]);
+}
+ */
 
 
+//for .......................of loop
 
 
+/* let num=[1,2,3,4,5];
+for(let n of num){
+    console.log(n);
+}
+
+ */
 
 
+ //for each loop
 
 
+/*  let num1=[1,2, 3,4,5];
+ num1.forEach((n)=>{
+    console.log(n);
+ });
+
+ */
 
 
+ //-----------------spread operator------------------
 
+ /* const num1=[1,2,3];
+ const num2=[4,5,6];
+ const num3=[7,8,9]
+ const num4=[...num1,...num2,...num3];
 
+ console.log(num4);
 
+ */
 
 
 
