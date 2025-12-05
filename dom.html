@@ -1,4 +1,7 @@
-<!DOCTYPE html>
+<!-- //----------USING CLASS------------------------// -->
+
+
+<!-- <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -6,11 +9,281 @@
     <title>Document</title>
 </head>
 <body>
-    <p id="mypara" >this is a some lines</p>
+    <p class="mypara" >this is a some lines</p>
     <script>
-        const para=document.getElementById("mypara");
-        para.style.color="red";
-        para.style.backgroundColor="hotpink";
+        const para=document.getElementsByClassName("mypara");
+        para[0].style.color="red";
+        para[0].style.backgroundColor="hotpink";
+    </script>
+</body>
+</html> -->
+
+
+<!-- //-----------------USING ID-------------------// -->
+
+
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p id="mypara">this is some lines</p>
+
+    <script>
+        const para = document.getElementById("mypara");
+        para.style.color = "red";
     </script>
 </body>
 </html>
+ -->
+
+<!-- //------------------USING TEXTCONTENT----------------//
+ -->
+
+
+<!--  <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p id="mypara">this is some lines</p>
+
+    <script>
+        const para = document.getElementById("mypara");
+        para.textContent = "Text has been changed ";
+    </script>
+</body>
+</html>
+ -->
+
+
+ <!-- //---------------using innertext---------------// -->
+
+<!-- 
+ <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p id="mypara">this is some lines</p>
+
+    <script>
+        const para = document.getElementById("mypara");
+        para.innerText = "Updated using innerText!";
+    </script>
+</body>
+</html>
+ -->
+
+<!-- //----------------difference-------------// -->
+
+ <!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TextContent vs innerText Demo</title>
+
+    <style>
+        .hidden-text {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+
+    <h2>textContent vs innerText Demo</h2>
+
+    <p id="demo">
+        This is visible text.
+        <span class="hidden-text">This is hidden text.</span>
+    </p>
+
+    <p id="output1"></p>
+    <p id="output2"></p>
+
+    <script>
+        const element = document.getElementById("demo");
+        document.getElementById("output1").textContent =
+            "textContent Output: " + element.textContent;
+        document.getElementById("output2").innerText =
+            "innerText Output: " + element.innerText;
+    </script>
+
+</body>
+</html>
+ -->
+
+
+
+<!-- 
+ <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Change Text Demo</title>
+</head>
+<body>
+
+    <h2 id="text">Hello</h2>
+
+    <button onclick="changeText()">Change Text</button>
+
+    <script>
+        function changeText() {
+            const heading = document.getElementById("text");
+            heading.innerText = "Text changed! 😒😒";
+        }
+    </script>
+
+</body>
+</html>
+ -->
+
+
+ <!-- //------INNER HTML----------------// -->
+
+
+<!--  <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Change Text Demo</title>
+</head>
+<body>
+
+    <h2 id="text">Hello</h2>
+
+    <button onclick="changeText()">Change Text</button>
+
+    <script>
+        function changeText() {
+            const heading = document.getElementById("text");
+            heading.innerHTML = "<u>Text changed! 😒😒</u>";
+        }
+    </script>
+
+</body>
+</html>
+ -->
+
+
+<!-- //-----------QUERY SELECTOR------------------//-->
+
+<!--  <!DOCTYPE html>
+<html>
+<body>
+
+<p class="msg">Hello World</p>
+
+<script>
+    const para = document.querySelector(".msg");
+    para.innerText = "Text changed using querySelector!";
+</script>
+
+</body>
+</html>
+
+
+<!DOCTYPE html>
+<html>
+<body>
+
+<h2 id="title">Welcome</h2>
+
+<script>
+    const heading = document.querySelector("#title");
+    heading.style.color = "blue";
+</script>
+
+</body>
+</html>
+
+<!DOCTYPE html>
+<html>
+<body>
+
+<h2 class="greet">Hello</h2>
+<button id="btn">Change Text</button>
+
+<script>
+    document.querySelector("#btn").onclick = function() {
+        document.querySelector(".greet").innerText = "Hi, text changed!";
+    };
+</script>
+
+</body>
+</html>
+
+
+<!DOCTYPE html>
+<html>
+<body>
+
+<p>This is paragraph 1</p>
+<p>This is paragraph 2</p>
+
+<script>
+    const firstPara = document.querySelector("p");
+    firstPara.style.color = "red";
+</script>
+
+</body>
+</html>
+
+
+<!DOCTYPE html>
+<html>
+<body>
+
+<div class="box">
+    <p>Hello from inside the box</p>
+</div>
+
+<script>
+    const insideText = document.querySelector(".box p");
+    insideText.style.fontWeight = "bold";
+</script>
+
+</body>
+</html>
+
+
+
+ -->
+
+
+ <!-- //----------------------QUERY SELCTOR ALL------------------ -->
+
+
+<!-- <!DOCTYPE html>
+<html>
+<body>
+
+<p class="text">Hello</p>
+<p class="text">Hi</p>
+<p class="text">Welcome</p>
+
+<script>
+    const allParas = document.querySelectorAll(".text");
+
+    allParas.forEach(p => {
+        p.style.color = "blue";
+    });
+</script>
+
+</body>
+</html> 
+ -->
+
